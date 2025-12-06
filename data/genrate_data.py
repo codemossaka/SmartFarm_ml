@@ -92,6 +92,14 @@ def generate_poultry_data(num_weeks=60, start_age=19, flock_id=1):
     return pd.DataFrame(data, columns=columns)
 
 
+df = generate_poultry_data()
+print(df.head())
+print("\nShape:", df.shape)
+
+# Save to CSV
+csv_filename = "eggs_farm_synthetic.csv"
+df.to_csv(csv_filename, index=False)
+
 # # Générer les données
 # df = generate_poultry_data()
 # print(df.head(10).to_csv(index=False))
